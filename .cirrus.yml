@@ -4,9 +4,13 @@ env:
 
 task:
   timeout_in: 120m
-  freebsd_instance:
-    matrix:
-      image_family: freebsd-12-2
+  matrix:
+    - name: 12.2-RELEASE
+      freebsd_instance:
+        image_family: freebsd-12-2
+    - name: 11.4-RELEASE
+      freebsd_instance:
+        image_family: freebsd-11-4
     cpu: 8
     memory: 16G
   install_script:
