@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PORT=editors/libreoffice
+PORT=mail/nullmailer
 
 PORTSDIR=/usr/ports
 
