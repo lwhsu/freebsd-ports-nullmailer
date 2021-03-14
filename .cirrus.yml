@@ -7,7 +7,7 @@ task:
   compute_engine_instance:
     cpu: 4
     memory: 8g
-    disk: 30
+    disk: 40
     image_project: freebsd-org-cloud-dev
     platform: freebsd
   matrix:
