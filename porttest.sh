@@ -40,12 +40,12 @@ poudriere bulk -t -j jail ports-mgmt/pkg
 
 cd /usr/ports/${PORT}
 make all-depends-list | awk -F'/' '{print $4"/"$5}' | xargs \
-sudo pkg fetch -y -o /usr/local/poudriere/data/packages/jail-default/.latest
+pkg fetch -y -o /usr/local/poudriere/data/packages/jail-default/.latest
 
 set +e
 poudriere testport -j jail ${PORT}
 RESULT=$?
-if [ ${RESULT} -eq 0 ];
+if [ ${RESULT} -eq 0 ]; then
 	exit 0
 fi
 set -e
