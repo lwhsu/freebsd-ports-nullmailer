@@ -45,6 +45,9 @@ sudo pkg fetch -y -o /usr/local/poudriere/data/packages/jail-default/.latest
 set +e
 poudriere testport -j jail ${PORT}
 RESULT=$?
+if [ ${RESULT} -eq 0 ];
+	exit 0
+fi
 set -e
 
 ls -l /usr/local/poudriere/data/logs/bulk/jail-default/latest/logs/errors
